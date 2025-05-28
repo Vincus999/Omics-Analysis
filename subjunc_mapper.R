@@ -1,6 +1,6 @@
 library(Rsubreads)
 
-dir.create("${WORKDIR}/0022_mapping") 
+dir.create("/home/user/project/0030_mapping/") 
 samples <- list( 
   normoxia_vec = c("fq_normoxia_vec1_trimmed.fastq", 
 "fq_normoxia_vec2_trimmed.fastq"), 
@@ -16,12 +16,12 @@ for (name in names(samples)) {
   fastqs <- samples[[name]] 
    
   subjunc( 
-    index = "${WORKDIR}/0021_RefGenome/Homo_sapiens_index", 
-    readfile1 = paste0("${WORKDIR}/0011_trimming/", fastqs[1]), 
-    readfile2 = paste0("${WORKDIR}/0011_trimming/", fastqs[2]), 
+    index = "/home/user/project/0031_RefGenome/Homo_sapiens_index", 
+    readfile1 = paste0("/home/user/project/0020_trimming/", fastqs[1]), 
+    readfile2 = paste0("/home/user/project/0020_trimming/", fastqs[2]), 
     input_format = "FASTQ", 
     output_format = "BAM", 
-    output_file = paste0("${WORKDIR}/0022_mapping/", name, 
+    output_file = paste0("/home/user/project/0030_mapping/", name, 
 "_mapped_reads.bam"), 
     nthreads = 4, 
     phredOffset = 33, 
